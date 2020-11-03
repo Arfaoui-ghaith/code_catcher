@@ -60,7 +60,7 @@ export default function Footer() {
 										<Link to="#" class="fa fa-google"></Link>
 										<Link to="#" class="fa fa-pinterest-p"></Link>
 									</div>
-									<div class="copyright">Copyright &copy; 2020 AuburnForest</div>
+									<div class="copyright">Copyright &copy; {(new Date().getFullYear())} Code Catcher</div>
 								</div>
 							</div>
 							
