@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, BrowserRouter as Router} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function Header() {
     const dem = {
@@ -7,7 +7,6 @@ export default function Header() {
         height: '60px',
     }
     return (
-        <Router>
         <div>
             <header class="main-header header-style-one">
                 <div class="header-top">
@@ -63,7 +62,7 @@ export default function Header() {
 
                                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                         <ul class="navigation clearfix">
-                                            <li class="current"><Link to="/">Home</Link></li>
+                                            <li><Link to="/">Home</Link></li>
                                             <li><Link to="/courses">Courses</Link></li>
                                             <li class="dropdown"><Link to="#">Profile</Link>
                                             <ul>
@@ -82,6 +81,6 @@ export default function Header() {
                 </div>
             </header>
         </div>
-        </Router>
+        
     )
 }
