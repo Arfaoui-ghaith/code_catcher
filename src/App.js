@@ -4,6 +4,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import Register from './components/Register';
+import ContactUs from './components/ContactUs';
+import Courses from './components/Courses';
 import {
   BrowserRouter as Router,
   Route
@@ -16,6 +18,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/Login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/contact" component={ContactUs} />
+        <Route exact path="/courses" component={Courses} />
         <Footer/>
       </div>
     </Router>
