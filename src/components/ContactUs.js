@@ -8,6 +8,7 @@ export default function ContactUs() {
     const layer2 = {
         backgroundImage: "url(images/icons/icon-2.png)"
     }
+   
     return (
         <div>
         <section class="page-title">
@@ -134,7 +135,7 @@ export default function ContactUs() {
             <div class="map-boxed">
                 
                 <div class="map-outer">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.631217835854!2d10.209222315141487!3d36.851307272521154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3532056d986d%3A0x36f5072f8a82c006!2sISET%20Charguia!5e0!3m2!1sfr!2stn!4v1604654732500!5m2!1sfr!2stn" allowfullscreen=""></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.631217835854!2d10.209222315141487!3d36.851307272521154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3532056d986d%3A0x36f5072f8a82c006!2sISET%20Charguia!5e0!3m2!1sfr!2stn!4v1604654732500!5m2!1sfr!2stn" allowfullscreen="" title="myFrame"></iframe>
                 </div>
             </div>
 	    </section>
