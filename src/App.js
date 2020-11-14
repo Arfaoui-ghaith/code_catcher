@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Register from './components/Register';
 import ContactUs from './components/ContactUs';
 import Courses from './components/Courses';
+import Course from './components/Course';
 import {
   BrowserRouter as Router,
   Route
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/contact" component={ContactUs} />
         <Route exact path="/courses" component={Courses} />
+        <Route exact path="/course" component={Course} />
         <Footer/>
       </div>
     </Router>

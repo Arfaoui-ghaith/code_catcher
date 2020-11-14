@@ -66,10 +66,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-6.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-6.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Interaction Design</Link></h5>
+                                            <h5><Link to="/course">Interaction Design</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -87,10 +87,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-7.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-7.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Visual Design</Link></h5>
+                                            <h5><Link to="/course">Visual Design</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -108,10 +108,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-8.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-8.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Wireframe Protos</Link></h5>
+                                            <h5><Link to="/course">Wireframe Protos</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -129,10 +129,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-9.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-9.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Color Theory</Link></h5>
+                                            <h5><Link to="/course">Color Theory</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -150,10 +150,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-10.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-10.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Typography</Link></h5>
+                                            <h5><Link to="/course">Typography</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -171,10 +171,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-11.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-11.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Picture Selection</Link></h5>
+                                            <h5><Link to="/course">Picture Selection</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -192,10 +192,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-12.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-12.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Interaction Design</Link></h5>
+                                            <h5><Link to="/course">Interaction Design</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">
@@ -213,10 +213,10 @@ export default function Courses() {
                                 <div class="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                     <div class="inner-box">
                                         <div class="image">
-                                            <Link to="course-detail"><img src="images/resource/course-13.jpg" alt=""/></Link>
+                                            <Link to="/course"><img src="images/resource/course-13.jpg" alt=""/></Link>
                                         </div>
                                         <div class="lower-content">
-                                            <h5><Link to="course-detail">Visual Design</Link></h5>
+                                            <h5><Link to="/course">Visual Design</Link></h5>
                                             <div class="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
                                             <div class="clearfix">
                                                 <div class="pull-left">

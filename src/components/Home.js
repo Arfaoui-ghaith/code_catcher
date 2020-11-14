@@ -311,69 +311,67 @@ export default function Home() {
 	    </section>
 
 
-        <section class="achievements-section">
+        <section class="testimonial-section">
             <div class="auto-container">
                 
                 <div class="sec-title centered">
-                    <h2>Students Opinion</h2>
-                    <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re <br/> two waters own morning gathered greater shall had behold had seed.</div>
+                    <h2>Students & Instructors Opinion</h2>
                 </div>
                 
                 
-                <div class="fact-counter">
-                    <div class="row clearfix">
-
-                       
-                        <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="content">
-                                    <div class="icon-box">
+                <div class="authors-box">
+                    <div class="author-one"><img src="images/resource/author-2.jpg" alt=""/></div>
+                    <div class="author-two"><img src="images/resource/author-3.jpg" alt=""/></div>
+                    <div class="author-three"><img src="images/resource/author-4.jpg" alt=""/></div>
+                    <div class="author-four"><img src="images/resource/author-5.jpg" alt=""/></div>
+                    
+                    <div class="author-five"><img src="images/resource/author-6.jpg" alt=""/></div>
+                    <div class="author-six"><img src="images/resource/author-7.jpg" alt=""/></div>
+                    <div class="author-seven"><img src="images/resource/author-8.jpg" alt=""/></div>
+                    <div class="author-eight"><img src="images/resource/author-9.jpg" alt=""/></div>
+                </div>
+                
+                <div class="single-item-carousel owl-carousel owl-theme">
+                    
+                    
+                    <div class="testimonial-block">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="quote-icon flaticon-quote-5"></div>
+                                <div class="image">
+                                    <img src="images/resource/author-1.jpg" alt=""/>
+                                </div>
+                            </div>
+                            <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="testimonial-block">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image">
                                     <img src="images/resource/author-5.jpg" alt=""/>
-                                    </div>
-                                   
-                                    <div class="text">
-                                    Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it
-                                    </div>
                                 </div>
                             </div>
+                            <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
                         </div>
-
-                        
-                        <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="content">
-                                    <div class="icon-box">
-                                    <img src="images/resource/author-3.jpg" alt=""/>
-                                    </div>
-                                    
-                                    <div class="text">
-                                    Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it
-                                    </div>
+                    </div>
+                    
+                    
+                    <div class="testimonial-block">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image">
+                                    <img src="images/resource/author-5.jpg" alt=""/>
                                 </div>
                             </div>
+                            <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it</div>
                         </div>
-
-                       
-                        <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="content">
-                                    <div class="icon-box">
-                                    <img src="images/resource/author-8.jpg" alt=""/>
-                                    </div>
-
-                                    
-                            
-                                    
-                                    <div class="text">
-                                    Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                     
                 </div>
+                
             </div>
 	    </section>
         </div>
