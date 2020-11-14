@@ -11,9 +11,7 @@ export default function Course() {
     const layer3 = {
         backgroundImage: "url(images/resource/video-image-1.jpg)"
     }
-    const layer4 = {
-        backgroundImage: "url(images/background/3.png)"
-    }
+   
     return (
         <div>
             <section class="page-title">
@@ -724,19 +722,6 @@ export default function Course() {
                 </div>
             </section>
             
-            
-            <section class="call-to-action-section-two" style={layer4}>
-                <div class="auto-container">
-                    <div class="content">
-                        <h2>Ready to get started?</h2>
-                        <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br/> waters own morning gathered greater shall had behold had seed.</div>
-                        <div class="buttons-box">
-                            <Link to="course" class="theme-btn btn-style-one"><span class="txt">Get Stared <i class="fa fa-angle-right"></i></span></Link>
-                            <Link to="course" class="theme-btn btn-style-two"><span class="txt">All Courses <i class="fa fa-angle-right"></i></span></Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     )
 }

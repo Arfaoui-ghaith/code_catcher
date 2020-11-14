@@ -5,9 +5,7 @@ export default function Footer() {
     const action_style = {
         backgroundImage: "url(images/background/3.png)"
     }
-    const footer1 = {
-        backgroundImage: "url(images/icons/icon-1.png)"
-    }
+  
 
     const footer2 = {
         backgroundImage: "background-image:url(images/icons/icon-3.png)"
@@ -34,7 +32,7 @@ export default function Footer() {
 
         <footer class="main-footer">
 		
-		<div class="pattern-layer paroller" data-paroller-factor="0.60" data-paroller-factor-lg="0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style={footer1}></div>
+		
 		<div class="pattern-layer-two data-paroller-factor=" data-paroller-factor-lg="0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style={footer2}></div>
 		<div class="auto-container">
 		

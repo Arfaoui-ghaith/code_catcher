@@ -5,6 +5,11 @@ import {Link} from 'react-router-dom';
 
 export default function Header() {
 
+    function refreshPage() {
+        window.location.replace('/');
+        
+      }
+
     useEffect(() => {
         (function($) {
             
@@ -625,7 +630,7 @@ export default function Header() {
 
                                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                         <ul class="navigation clearfix">
-                                            <li><Link to="/">Home</Link></li>
+                                            <li><Link to="/" onClick={refreshPage}>Home</Link></li>
                                             <li><Link to="/courses">Courses</Link></li>
                                             <li class="dropdown"><Link to="#">Profile</Link>
                                             <ul>
