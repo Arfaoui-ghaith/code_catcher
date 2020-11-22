@@ -5,9 +5,8 @@ import {Link} from 'react-router-dom';
 
 export default function Header() {
 
-    function refreshPage() {
-        window.location.replace('/');
-        
+    const refreshPage = (e) => {
+        window.location.replace(e.target.href);
       }
 
     useEffect(() => {
@@ -576,70 +575,81 @@ export default function Header() {
     }
     return (
         <div>
-            <header class="main-header header-style-one">
-                <div class="header-top">
-                    <div class="auto-container">
-                        <div class="clearfix">
-                            <div class="top-left pull-left clearfix">
-                                <ul class="info-list">
-                                    <li><span>Call Us:</span> +1 (800) 123-4567</li>
-                                    <li><span>Email Us:</span> info@yourcompany.com</li>
+            <header className="main-header header-style-one">
+                <div className="header-top">
+                    <div className="auto-container">
+                        <div className="clearfix">
+                            <div className="top-left pull-left clearfix">
+                                <ul className="info-list">
+                                    <li><span>Call Us:</span> +216 55779887</li>
+                                    <li><span>Email Us:</span> info@codecatcher.com</li>
                                 </ul>
                             </div>
 
-                            <div class="top-right pull-right clearfix">
-                                <ul class="login-nav">
-                                    <li><Link to="/login">Log In</Link></li>
-                                    <li><Link to="/register">Register</Link></li>
+                            <div className="top-right pull-right clearfix">
+                                <ul className="login-nav">
+                                    {
+                                        !localStorage.getItem('token') ? 
+                                        <React.Fragment><li><Link to="/login">Log In</Link></li><li><Link to="/register">Register</Link></li></React.Fragment> : <li>{localStorage.getItem('email')}</li>
+
+                                    }
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="header-upper">
-                    <div class="auto-container">
-                        <div class="clearfix">
-                            <div class="pull-left logo-box">
-                                <div class="logo">
+                <div className="header-upper">
+                    <div className="auto-container">
+                        <div className="clearfix">
+                            <div className="pull-left logo-box">
+                                <div className="logo">
                                     <Link to="/">
                                         <img src="images/logo.png" alt="" title="codecatcher" style={dem}/>
                                     </Link>
                                 </div>
                             </div>
 
-                            <div class="nav-outer clearfix">
-                                <div class="mobile-nav-toggler">
-                                    <span class="icon flaticon-menu"></span>
+                            <div className="nav-outer clearfix">
+                                <div className="mobile-nav-toggler">
+                                    <span className="icon flaticon-menu"></span>
                                 </div>
 
-                                <nav class="main-menu show navbar-expand-md">
-                                    <div class="navbar-header">
-                                        <button class="navbar-toggler"
+                                <nav className="main-menu show navbar-expand-md">
+                                    <div className="navbar-header">
+                                        <button className="navbar-toggler"
                                         type="button"
                                         data-toggle="collapse"
                                         data-target="#navbarSupportedContent"
                                         aria-controls="navbarSupportedContent"
                                         aria-expanded="false" aria-label="Toggle navigation"
                                         >
-                                            <span class="icon-bar"></span>
-									        <span class="icon-bar"></span>
-									        <span class="icon-bar"></span>
+                                            <span className="icon-bar"></span>
+									        <span className="icon-bar"></span>
+									        <span className="icon-bar"></span>
                                         </button>
                                     </div>
 
-                                    <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                        <ul class="navigation clearfix">
+                                    <div className="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                        <ul className="navigation clearfix">
                                             <li><Link to="/" onClick={refreshPage}>Home</Link></li>
-                                            <li><Link to="/courses">Courses</Link></li>
-                                            <li class="dropdown"><Link to="#">Profile</Link>
+                                            
+                                            <li className="dropdown"><Link to="#">Courses</Link>
                                             <ul>
-                                                <li><Link to="/profile">Instructor Profile</Link></li>
-                                                <li><Link to="/profile">Student Profile</Link></li>
-                                                <li><Link to="/profile">Edit Profile</Link></li>
+                                                <li><Link to="/all-courses" onClick={refreshPage}>All Courses</Link></li>
+                                                <li><Link to="/my-courses" onClick={refreshPage}>My Courses</Link></li>
+                                                <li><Link to="/course-studio" onClick={refreshPage}>Course Studio</Link></li>
                                             </ul>
                                             </li>
-                                            <li><Link to="/contact">Contact Us</Link></li>
+                                            <li className="dropdown"><Link to="#">Profile</Link>
+                                            <ul>
+                                                <li><Link to="/profile" onClick={refreshPage}>Instructor Profile</Link></li>
+                                                <li><Link to="/profile" onClick={refreshPage}>Student Profile</Link></li>
+                                                <li><Link to="/profile" onClick={refreshPage}>Edit Profile</Link></li>
+                                            </ul>
+                                            </li>
+                                            <li><Link to="/contact" onClick={refreshPage}>Contact Us</Link></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -647,13 +657,13 @@ export default function Header() {
                         </div>
                     </div>
                 </div>
-                <div class="mobile-menu">
-                    <div class="menu-backdrop"></div>
-                    <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+                <div className="mobile-menu">
+                    <div className="menu-backdrop"></div>
+                    <div className="close-btn"><span className="icon flaticon-multiply"></span></div>
                     
-                        <nav class="menu-box">
-                            <div class="nav-logo"><Link to="/home"><img src="images/footer-logo.png" alt="" title=""/></Link></div>
-                            <div class="menu-outer">
+                        <nav className="menu-box">
+                            <div className="nav-logo"><Link to="/home"><img src="images/footer-logo.png" alt="" title=""/></Link></div>
+                            <div className="menu-outer">
                                 
                             </div>
                         </nav>

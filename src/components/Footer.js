@@ -17,56 +17,56 @@ export default function Footer() {
 
     return (
         <div>
-        <section class="call-to-action-section-two" style={action_style}>
-            <div class="auto-container">
-                <div class="content">
+        <section className="call-to-action-section-two" style={action_style}>
+            <div className="auto-container">
+                <div className="content">
                     <h2>Ready to get started?</h2>
-                    <div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br/> waters own morning gathered greater shall had behold had seed.</div>
-                    <div class="buttons-box">
-                        <Link to="course.html" class="theme-btn btn-style-one"><span class="txt">Get Stared <i class="fa fa-angle-right"></i></span></Link>
-                        <Link to="course.html" class="theme-btn btn-style-two"><span class="txt">All Courses <i class="fa fa-angle-right"></i></span></Link>
+                    <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br/> waters own morning gathered greater shall had behold had seed.</div>
+                    <div className="buttons-box">
+                        <Link to="course.html" className="theme-btn btn-style-one"><span className="txt">Get Stared <i className="fa fa-angle-right"></i></span></Link>
+                        <Link to="course.html" className="theme-btn btn-style-two"><span className="txt">All Courses <i className="fa fa-angle-right"></i></span></Link>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="main-footer">
+        <footer className="main-footer">
 		
 		
-		<div class="pattern-layer-two data-paroller-factor=" data-paroller-factor-lg="0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style={footer2}></div>
-		<div class="auto-container">
+		<div className="pattern-layer-two data-paroller-factor=" data-paroller-factor-lg="0.20" data-paroller-type="foreground" data-paroller-direction="vertical" style={footer2}></div>
+		<div className="auto-container">
 		
         	
-            <div class="widgets-section">
-            	<div class="row clearfix">
+            <div className="widgets-section">
+            	<div className="row clearfix">
                 	
                     
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="row clearfix">
+                    <div className="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div className="row clearfix">
 							
 							
-                            <div class="footer-column col-lg-7 col-md-6 col-sm-12">
-                                <div class="footer-widget logo-widget">
-									<div class="logo">
+                            <div className="footer-column col-lg-7 col-md-6 col-sm-12">
+                                <div className="footer-widget logo-widget">
+									<div className="logo">
                                     	<Link to="index.html"><img src="images/footer-logo.png" alt="" style={dem}/></Link>
                                     </div>
-									<div class="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater.</div>
-									<div class="social-box">
-										<Link to="#" class="fa fa-facebook"></Link>
-										<Link to="#" class="fa fa-instagram"></Link>
-										<Link to="#" class="fa fa-twitter"></Link>
-										<Link to="#" class="fa fa-google"></Link>
-										<Link to="#" class="fa fa-pinterest-p"></Link>
+									<div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater.</div>
+									<div className="social-box">
+										<Link to="#" className="fa fa-facebook"></Link>
+										<Link to="#" className="fa fa-instagram"></Link>
+										<Link to="#" className="fa fa-twitter"></Link>
+										<Link to="#" className="fa fa-google"></Link>
+										<Link to="#" className="fa fa-pinterest-p"></Link>
 									</div>
-									<div class="copyright">Copyright &copy; {(new Date().getFullYear())} Code Catcher</div>
+									<div className="copyright">Copyright &copy; {(new Date().getFullYear())} Code Catcher</div>
 								</div>
 							</div>
 							
 							
-                            <div class="footer-column col-lg-5 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
+                            <div className="footer-column col-lg-5 col-md-6 col-sm-12">
+                                <div className="footer-widget links-widget">
 									<h4>About Us</h4>
-									<ul class="links-widget">
+									<ul className="links-widget">
 										<li><Link to="#">Afficiates</Link></li>
 										<li><Link to="#">Partners</Link></li>
 										<li><Link to="#">Reviews</Link></li>
@@ -80,14 +80,14 @@ export default function Footer() {
 					</div>
 					
 					
-                    <div class="big-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="row clearfix">
+                    <div className="big-column col-lg-6 col-md-12 col-sm-12">
+                        <div className="row clearfix">
 							
 							
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
+                            <div className="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div className="footer-widget links-widget">
 									<h4>Resource</h4>
-									<ul class="links-widget">
+									<ul className="links-widget">
 										<li><Link to="#">Privacy Policy</Link></li>
 										<li><Link to="#">Support Area</Link></li>
 										<li><Link to="#">Documentations</Link></li>
@@ -98,10 +98,10 @@ export default function Footer() {
 							</div>
 							
 							
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <div class="footer-widget links-widget">
+                            <div className="footer-column col-lg-6 col-md-6 col-sm-12">
+                                <div className="footer-widget links-widget">
 									<h4>Quick Links</h4>
-									<ul class="links-widget">
+									<ul className="links-widget">
 										<li><Link to="#">home</Link></li>
 										<li><Link to="#">About us</Link></li>
 										<li><Link to="#">Features</Link></li>

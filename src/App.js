@@ -7,6 +7,8 @@ import Register from './components/Register';
 import ContactUs from './components/ContactUs';
 import Courses from './components/Courses';
 import Course from './components/Course';
+import CoursStudio from './components/CoursStudio';
+import MyCourses from './components/MyCourses';
 import {
   BrowserRouter as Router,
   Route
@@ -20,8 +22,10 @@ function App() {
         <Route exact path="/Login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/contact" component={ContactUs} />
-        <Route exact path="/courses" component={Courses} />
+        <Route exact path="/all-courses" component={Courses} />
         <Route exact path="/course" component={Course} />
+        <Route exact path="/course-studio" component={CoursStudio} />
+        <Route exact path="/my-courses" component={MyCourses} />
         <Footer/>
       </div>
     </Router>
