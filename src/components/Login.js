@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 import axios from 'axios';
 import './../css/alert.css';
+
+
 export default function Login() {
 
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
 
     const hideAlert = () => {
         const el = document.querySelector('.alert');
@@ -31,7 +35,7 @@ export default function Login() {
           console.log(res);
       
           if (res.status === 200) {
-            localStorage.setItem('email',data.email);  
+            localStorage.setItem('user',data.user);  
             localStorage.setItem('token',res.data.token);
             showAlert('success', `Login Successfully !`);
             window.setTimeout(() => {
@@ -50,27 +54,18 @@ export default function Login() {
             courseDataForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
             
-                //document.querySelector('.btn--save-settings').text = 'Updating...';
+                document.getElementById('btn-login').text = 'Laoding...';
             
-                /*const form = new FormData();
-                console.log(document.getElementById('email').value);
-                form.append('email', document.getElementById('email').value);
-                form.append('password', document.getElementById('password').value);*/
                 const form = {
-                    email: document.getElementById('email').value,
-                    password: document.getElementById('password').value
+                    email,
+                    password
                 }
 
-
                 await loginReq(form);
-                //document.querySelector('.btn--save-settings').text = 'SAVE SETTINGS';
+                document.getElementById('btn-login').text = 'Login';
               });
             }
       };
-
-
-
-
 
     return (
         <React.Fragment>
@@ -107,12 +102,12 @@ export default function Login() {
                         <form id="login">
                             <div className="form-group">
                                 <label>User Name</label>
-                                <input type="text" name="email" id="email" placeholder="Email" required=""/>
+                                <input className="form-control" type="text" name="email" id="email" placeholder="Email" required="" value={email} onChange={(e) => setEmail(e.target.value)}/>
                             </div>
                             <div className="form-group">
                                 <label>Password</label>
                                 <span className="eye-icon flaticon-eye"></span>
-                                <input type="password" name="password" id="password" placeholder="Password" required=""/>
+                                <input className="form-control" type="password" name="password" id="password" placeholder="Password" required="" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
                             <div className="form-group">
                                 <div className="clearfix">
@@ -128,7 +123,7 @@ export default function Login() {
                                 </div>
                             </div>
                             <div className="form-group text-center">
-                                <button type="submit" className="theme-btn btn-style-three" onClick={loginUser}><span className="txt">Login <i className="fa fa-angle-right"></i></span></button>
+                                <button type="submit" id="btn-login" className="theme-btn btn-style-three" onClick={loginUser}><span className="txt">Login <i className="fa fa-angle-right"></i></span></button>
                             </div>
                             <div className="form-group">
                                 <div className="users">New User? <Link to="/register">Sign Up</Link></div>

@@ -1,6 +1,45 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
+
 export default function Courses() {
+
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() =>{
+        const url='cours/';
+        
+        const res = async () => {
+            try {
+            const result = await axios({
+            method: 'GET',
+            url,
+            });
+
+            if (result.status === 200) {
+                console.log(result);
+                setCourses(result.data);
+            }
+
+            }catch (err) {
+                console.log(err);
+            };   
+        };
+
+        res();
+
+         
+    },[]);
+
+
+    const styleText = {
+        "word-wrap": "break-word",
+        "overflow": "hidden",
+        "display": "-webkit-box",
+        "-webkit-line-clamp": "3",
+        "-webkit-box-orient": "vertical"
+    }
+
     
     const layer1 = {
         backgroundImage: "url(images/icons/icon-1.png)"
@@ -49,7 +88,7 @@ export default function Courses() {
                             <div className="options-view">
                                 <div className="clearfix">
                                     <div className="pull-left">
-                                        <h3>Browse UI/ UX Courses</h3>
+                                        <h3>Browse All Courses</h3>
                                     </div>
                                     <div className="pull-right clearfix">
                                       
@@ -68,194 +107,32 @@ export default function Courses() {
                             
                             <div className="row clearfix">
                                 
+                                {
+                                    courses.map((el) => (
+                                        
+                                            <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
+                                                <div className="inner-box">
+                                                    <div className="image">
+                                                        <Link to="/course" onClick={refreshPage}><img src="images/resource/course-6.jpg" alt="/course" /></Link>
+                                                    </div>
+                                                    <div className="lower-content">
+                                                        <h5><Link to="/course" onClick={refreshPage}>{el.title}</Link></h5>
+                                                        <div className="text" style={styleText} >{el.description}</div>
+                                                        <div className="clearfix">
+                                                            <div className="pull-left">
+                                                                <div className="students">{el.listVideo.length} Lecturer</div>
+                                                            </div>
+                                                            <div className="pull-right">
+                                                                <div className="hours">${el.price}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                    )
+                                )}
                                 
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-6.jpg" alt="/course" /></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Interaction Design</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-7.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Visual Design</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-8.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Wireframe Protos</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-9.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Color Theory</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-10.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Typography</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-11.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Picture Selection</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-12.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Interaction Design</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course" onClick={refreshPage}><img src="images/resource/course-13.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link to="/course" onClick={refreshPage}>Visual Design</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                                <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                                    <div className="inner-box">
-                                        <div className="image">
-                                            <Link to="/course-detail"><img src="images/resource/course-14.jpg" alt=""/></Link>
-                                        </div>
-                                        <div className="lower-content">
-                                            <h5><Link href="/course-detail">Wireframe Protos</Link></h5>
-                                            <div className="text">Replenish of  third creature and meat blessed void a fruit gathered waters.</div>
-                                            <div className="clearfix">
-                                                <div className="pull-left">
-                                                    <div className="students">12 Lecturer</div>
-                                                </div>
-                                                <div className="pull-right">
-                                                    <div className="hours">54 Hours</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        
                                 
                             </div>
                             
