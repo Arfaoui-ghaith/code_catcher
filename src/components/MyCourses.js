@@ -37,6 +37,7 @@ export default function MyCourses() {
         backgroundImage: "url(images/icons/icon-2.png)"
     }
     return (
+        <React.Fragment>
         <div>
             <section className="page-title">
                 <div className="auto-container">
@@ -185,7 +186,7 @@ export default function MyCourses() {
                 </div>
                 </section>      
             </div>
-                        
+           </React.Fragment>             
        
     )
 }

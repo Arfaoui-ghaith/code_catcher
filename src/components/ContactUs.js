@@ -10,6 +10,7 @@ export default function ContactUs() {
     }
    
     return (
+        <React.Fragment>
         <div>
         <section className="page-title">
             <div className="auto-container">
@@ -140,5 +141,6 @@ export default function ContactUs() {
             </div>
 	    </section>
         </div>
+        </React.Fragment>
     )
 }

@@ -12,9 +12,11 @@ export default function Home() {
     const icon_2 = {
         backgroundImage: "url(images/icons/icon-2.png)"
     }
+
   
 
     return (
+        <React.Fragment>
         <div>
         <section className="banner-section">
             <div className="pattern-layer" style={pattern_style}></div>
@@ -375,6 +377,6 @@ export default function Home() {
             </div>
 	    </section>
         </div>
-        
+        </React.Fragment>
     )
 }

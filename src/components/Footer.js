@@ -16,6 +16,7 @@ export default function Footer() {
     }
 
     return (
+		<React.Fragment>
         <div>
         <section className="call-to-action-section-two" style={action_style}>
             <div className="auto-container">
@@ -120,5 +121,6 @@ export default function Footer() {
 		</div>
 	    </footer>
         </div>
+		</React.Fragment>
     )
 }

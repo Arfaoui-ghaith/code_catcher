@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Link, BrowserRouter as Router} from 'react-router-dom';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {setLoginStatus} from './../redux/actions/authAction';
 import './../css/alert.css';
 
 
@@ -8,6 +10,12 @@ export default function Login() {
 
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+
+
+
+    const dispatch = useDispatch();
+    const dispatchState = (token,user) => dispatch(setLoginStatus(token, user));
+    
 
     const hideAlert = () => {
         const el = document.querySelector('.alert');
@@ -35,8 +43,8 @@ export default function Login() {
           console.log(res);
       
           if (res.status === 200) {
-            localStorage.setItem('user',data.user);  
-            localStorage.setItem('token',res.data.token);
+            
+            dispatchState(res.data.token,JSON.stringify(res.data.user));
             showAlert('success', `Login Successfully !`);
             window.setTimeout(() => {
               window.location.replace("/");

@@ -33,11 +33,11 @@ export default function Courses() {
 
 
     const styleText = {
-        "word-wrap": "break-word",
+        wordWrap: "break-word",
         "overflow": "hidden",
         "display": "-webkit-box",
-        "-webkit-line-clamp": "3",
-        "-webkit-box-orient": "vertical"
+        WebkitLineClamp: "3",
+        WebkitBoxOrient: "vertical"
     }
 
     
@@ -49,11 +49,12 @@ export default function Courses() {
     }
 
     const refreshPage = (e) => {
-        
-        window.location.replace(e.target.href ? e.target.href : e.target.alt );
+        localStorage.setItem('coursId',e.target.alt);
+        window.location.replace(e.target.href ? e.target.href : e.target.name );
       }
 
     return (
+        <React.Fragment>
         <div>
             <section className="page-title">
                 <div className="auto-container">
@@ -108,15 +109,15 @@ export default function Courses() {
                             <div className="row clearfix">
                                 
                                 {
-                                    courses.map((el) => (
-                                        
+                                    courses.map((el,index) => (
+                                            <React.Fragment key={index}>
                                             <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                                 <div className="inner-box">
                                                     <div className="image">
-                                                        <Link to="/course" onClick={refreshPage}><img src="images/resource/course-6.jpg" alt="/course" /></Link>
+                                                        <Link to="/course" onClick={refreshPage}><img src="images/resource/course-6.jpg" alt={el._id} name="/course"/></Link>
                                                     </div>
                                                     <div className="lower-content">
-                                                        <h5><Link to="/course" onClick={refreshPage}>{el.title}</Link></h5>
+                                                        <h5><Link to="/course" alt={el._id}  onClick={refreshPage}>{el.title}</Link></h5>
                                                         <div className="text" style={styleText} >{el.description}</div>
                                                         <div className="clearfix">
                                                             <div className="pull-left">
@@ -128,9 +129,11 @@ export default function Courses() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
+                                            </React.Fragment>  
                                     )
-                                )}
+                                )
+                                }
                                 
                         
                                 
@@ -159,19 +162,19 @@ export default function Courses() {
                                                 
                                                 <div className="radio-box">
                                                     <input type="radio" name="remember-password"  id="type-1"/> 
-                                                    <label for="type-1">Beginner</label>
+                                                    <label htmlFor="type-1">Beginner</label>
                                                 </div>
                                                 
                                                 
                                                 <div className="radio-box">
                                                     <input type="radio" name="remember-password" id="type-2"/> 
-                                                    <label for="type-2">Intermediate</label>
+                                                    <label htmlFor="type-2">Intermediate</label>
                                                 </div>
                                                 
                                                 
                                                 <div className="radio-box">
                                                     <input type="radio" name="remember-password" id="type-3"/> 
-                                                    <label for="type-3">Expert</label>
+                                                    <label htmlFor="type-3">Expert</label>
                                                 </div>
                                                 
                                             </form>
@@ -189,13 +192,13 @@ export default function Courses() {
                                                 
                                                 <div className="radio-box">
                                                     <input type="radio" name="remember-password"  id="type-4"/> 
-                                                    <label for="type-4">Free (14)</label>
+                                                    <label htmlFor="type-4">Free (14)</label>
                                                 </div>
                                                 
                                                 
                                                 <div className="radio-box">
                                                     <input type="radio" name="remember-password" id="type-5"/> 
-                                                    <label for="type-5">Paid</label>
+                                                    <label htmlFor="type-5">Paid</label>
                                                 </div>
                                                 
                                             </form>
@@ -213,18 +216,18 @@ export default function Courses() {
                                                 
                                                 <div className="radio-box-three">
                                                     <input type="radio" name="remember-password"  id="type-7"/>
-                                                    <label for="type-7">5+ hours (30)</label>
+                                                    <label htmlFor="type-7">5+ hours (30)</label>
                                                 </div>
                                                 
                                                 
                                                 <div className="radio-box-three">
                                                     <input type="radio" name="remember-password" id="type-8"/> 
-                                                    <label for="type-8">10+ hours (20)</label>
+                                                    <label htmlFor="type-8">10+ hours (20)</label>
                                                 </div>
                                                 
                                                 <div className="radio-box-three">
                                                     <input type="radio" name="remember-password" id="type-9"/> 
-                                                    <label for="type-9">15+ hours (5)</label>
+                                                    <label htmlFor="type-9">15+ hours (5)</label>
                                                 </div>
                                                 
                                             </form>
@@ -331,5 +334,6 @@ export default function Courses() {
             </div>
 	    </section>
         </div>
+        </React.Fragment>
     )
 }

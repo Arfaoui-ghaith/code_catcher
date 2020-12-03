@@ -87,6 +87,7 @@ export default function CoursStudio() {
 
    
     return (
+        <React.Fragment>
         <div>
             <section className="page-title style-two" >
                 <div className="auto-container">
@@ -187,5 +188,6 @@ export default function CoursStudio() {
             
             </section>
         </div>
+        </React.Fragment>
     )
 }

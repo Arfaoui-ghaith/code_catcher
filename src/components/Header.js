@@ -2,8 +2,21 @@ import React, {useEffect} from 'react'
 
 import { WOW }  from 'wowjs';
 import {Link} from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import {Logout} from './../redux/actions/authAction';
 
 export default function Header() {
+
+    const token = useSelector(state=>state.token);
+    const user = useSelector(state=>state.user);
+    
+    
+    const dispatch = useDispatch();
+    const deconnexion = () => {
+        dispatch(Logout());
+        window.location.replace('/login');
+    }
+
 
     const refreshPage = (e) => {
         window.location.replace(e.target.href);
@@ -568,12 +581,17 @@ export default function Header() {
         })(window.jQuery);
     }, []);
 
+    const style1 = {
+    paddingTop: "16px",
+    paddingBottom: "16px"
+    }
 
     const dem = {
         width: '240px',
         height: '60px',
     }
     return (
+        <React.Fragment>
         <div>
             <header className="main-header header-style-one">
                 <div className="header-top">
@@ -586,15 +604,12 @@ export default function Header() {
                                 </ul>
                             </div>
 
-                            <div className="top-right pull-right clearfix">
-                                <ul className="login-nav">
-                                    {
-                                        !localStorage.getItem('token') ? 
-                                        <React.Fragment><li><Link to="/login">Log In</Link></li><li><Link to="/register">Register</Link></li></React.Fragment> : <li>{localStorage.getItem('email')}</li>
-
-                                    }
-                                    
-                                </ul>
+                            <div className="top-right pull-right clearfix" style={style1}>
+                                {
+                                    token === undefined ?
+                                <ul className="login-nav"><React.Fragment><li><Link to="/login">Log In</Link></li><li><Link to="/register">Register</Link></li></React.Fragment></ul> :
+                                <ul className="info-list"><React.Fragment><li><span>Hi! </span>{JSON.parse(user).email}</li><li><Link to="#" onClick={deconnexion}><strong>Deconnexion</strong></Link></li></React.Fragment></ul>
+                                }
                             </div>
                         </div>
                     </div>
@@ -670,6 +685,6 @@ export default function Header() {
                 </div>
             </header>
         </div>
-        
+        </React.Fragment>
     )
 }

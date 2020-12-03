@@ -1,6 +1,43 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import buyCourse from './utils/stripe';
+
 export default function Course() {
+
+    
+    const [course, setCourse] = useState({});
+    const coursId = localStorage.getItem('coursId');
+    const buyCoursefunction = (e) => {
+        e.target.innerHTML = "PROCESSING ...";
+        buyCourse(coursId);
+    }
+
+    useEffect(() =>{
+        const url=`cours/${localStorage.getItem('coursId')}`;
+        
+        const res = async () => {
+            try {
+            const result = await axios({
+            method: 'GET',
+            url,
+            });
+
+            if (result.status === 200) {
+                console.log(result);
+                setCourse(result.data);
+            }
+
+            }catch (err) {
+                console.log(err);
+            };   
+        };
+
+        res();
+        console.log(localStorage.getItem('courseId'));
+         
+    },[]);
+
 
     const layer1 = {
         backgroundImage: "url(images/icons/icon-1.png)"
@@ -13,6 +50,7 @@ export default function Course() {
     }
    
     return (
+        <React.Fragment>
         <div>
             <section className="page-title">
                 <div className="auto-container">
@@ -38,7 +76,7 @@ export default function Course() {
                 <div className="circle-one"></div>
                 <div className="auto-container">
                     <div className="sec-title">
-                        <h2>Learn  User Interface and <br/> User Experience</h2>
+                        <h2>{course.title}</h2>
                     </div>
                     
                     <div className="inner-container">
@@ -56,9 +94,7 @@ export default function Course() {
                                             
                                             <ul className="tab-btns tab-buttons clearfix">
                                                 <li data-tab="#prod-overview" className="tab-btn active-btn">Overview</li>
-                                                <li data-tab="#prod-curriculum" className="tab-btn">Curriculum</li>
-                                                <li data-tab="#prod-announcement" className="tab-btn">Announcement</li>
-                                                <li data-tab="#prod-faq" className="tab-btn">FAQ</li>
+                                               
                                                 <li data-tab="#prod-reviews" className="tab-btn">Reviews</li>
                                             </ul>
                                             
@@ -73,7 +109,7 @@ export default function Course() {
                                                         <div className="course-overview">
                                                             <div className="inner-box">
                                                                 <h4>25 That Prevent Job Seekers From Overcoming Failure</h4>
-                                                                <p>Phasellus enim magna, varius et commodo ut, ultricies vitae velit. Ut nulla tellus, eleifend euismod pellentesque vel, sagittis vel justo. In libero urna, venenatis sit amet ornare non, suscipit nec risus. Sed consequat justo non mauris pretium at tempor justo sodales. Quisque tincidunt laoreet malesuada. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.</p>
+                                                                <p>{course.description}</p>
                                                                 <ul className="student-list">
                                                                     <li>23,564 Total Students</li>
                                                                     <li><span className="theme_color">4.5</span> <span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span> (1254 Rating)</li>
@@ -146,485 +182,6 @@ export default function Course() {
                                                     </div>
                                                 </div>
                                                 
-                                                
-                                                <div className="tab" id="prod-curriculum">
-                                                    <div className="content">
-                                                        
-                                                        
-                                                        <ul className="accordion-box">
-
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn active"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> UI/ UX Introduction</div>
-                                                                <div className="acc-content current">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Color Theory</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Basic Typography</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Wireframing & Prototyping</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                <div className="tab" id="prod-announcement">
-                                                    <div className="content">
-                                                        
-                                                        
-                                                        <ul className="accordion-box">
-
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn active"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> UI/ UX Introduction</div>
-                                                                <div className="acc-content current">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                          
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Color Theory</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Basic Typography</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Wireframing & Prototyping</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                <div className="tab" id="prod-faq">
-                                                    <div className="content">
-                                                        
-                                                        
-                                                        <ul className="accordion-box">
-
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn active"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> UI/ UX Introduction</div>
-                                                                <div className="acc-content current">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Color Theory</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Basic Typography</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            
-                                                            
-                                                            <li className="accordion block">
-                                                                <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Wireframing & Prototyping</div>
-                                                                <div className="acc-content">
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"><i className="ripple"></i></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="content">
-                                                                        <div className="clearfix">
-                                                                            <div className="pull-left">
-                                                                                <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
-                                                                            </div>
-                                                                            <div className="pull-right">
-                                                                                <div className="minutes">35 Minutes</div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        
-                                                        </ul>
-                                                        
-                                                    </div>
-                                                </div>
                                                 
                                                 
                                                 <div className="tab" id="prod-reviews">
@@ -708,11 +265,11 @@ export default function Course() {
                                         <h4>Preview this course</h4>
                                     </div>
                                 
-                                    <div className="price">$11.99</div>
+                                    <div className="price" >${course.price}</div>
                                     <div className="time-left">23 hours left at this price!</div>
                                     
-                                    <Link to="#" className="theme-btn btn-style-three"><span className="txt">Add To Cart <i className="fa fa-angle-right"></i></span></Link>
-                                    <Link to="#" className="theme-btn btn-style-two"><span className="txt">Buy Now <i className="fa fa-angle-right"></i></span></Link>
+                                    <span className="theme-btn btn-style-three" style={{cursor: "pointer"}} onClick={buyCoursefunction}><span className="txt">Buy Now<i className="fa fa-angle-right"></i></span></span>
+                                    
                                 </div>
                             </div>
                             
@@ -723,5 +280,6 @@ export default function Course() {
             </section>
             
         </div>
+        </React.Fragment>
     )
 }
