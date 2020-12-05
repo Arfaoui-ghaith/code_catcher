@@ -6,21 +6,21 @@ const public_key = "pk_test_51HsF85HKgsi1BtbNAAUMjRs0pCfN1z3Lz3e0Al0Ysj9MYKXrpto
 const stripe = loadStripe(public_key);
 
 
-const buyCourse = async (coursId) => {
+const Subscribe = async (data) => {
     try{
-        const url = `stripe/checkout-session/${coursId}`;
+        const url = `stripe/checkout-subscribe-session/`;
         // 1) Get checkout session from API
         const session = await axios({
             headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`},
-            method: 'get',
+            method: 'post',
             url,
+            data
           });
         console.log(session);
         
-        localStorage.setItem('payment_intent_id',session.data.session.payment_intent);
-        localStorage.setItem('payment_client_id',session.data.session.client_reference_id);
-        localStorage.setItem('payment_course_id',coursId);
-
+        localStorage.setItem('sub_payment_intent_id',session.data.session.payment_intent);
+        localStorage.setItem('nbMonth', data.nbMonth);
+        
         // 2) Create checkout form + chanre credit card
         await (await stripe).redirectToCheckout({
             sessionId: session.data.session.id
@@ -31,4 +31,4 @@ const buyCourse = async (coursId) => {
     }
 }
 
-export default buyCourse;
+export default Subscribe;

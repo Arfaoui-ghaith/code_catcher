@@ -5,7 +5,28 @@ import buyCourse from './utils/stripe';
 
 export default function Course() {
 
-    
+    const res_payment = async () => {
+        const url = `/payment/create/${localStorage.getItem('payment_course_id')}/${localStorage.getItem('payment_intent_id')}`;
+        try {
+            const resultPayment = await axios({
+            headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`},
+            method: 'get',
+            url,
+            });
+
+            if (resultPayment.status === 200) {
+                console.log(resultPayment);
+                
+            }
+
+            }catch (err) {
+                console.log(err);
+            }; 
+            localStorage.removeItem('payment_course_id');
+            localStorage.removeItem('payment_intent_id');
+            localStorage.removeItem('payment_client_id');  
+    }
+
     const [course, setCourse] = useState({});
     const coursId = localStorage.getItem('coursId');
     const buyCoursefunction = (e) => {
@@ -14,6 +35,10 @@ export default function Course() {
     }
 
     useEffect(() =>{
+        if(localStorage.getItem('payment_intent_id') !== null && localStorage.getItem('payment_intent') !== undefined){
+            res_payment();
+        }
+
         const url=`cours/${localStorage.getItem('coursId')}`;
         
         const res = async () => {
