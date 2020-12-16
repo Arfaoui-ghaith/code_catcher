@@ -15,6 +15,9 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
+import HistoricCours from './components/HistoricCours';
+import SubscriptionHistory from './components/SubscriptionHistory';
+import Report from './components/Report';
 
 function App() {
   return (
@@ -30,7 +33,10 @@ function App() {
         <Route exact path="/course-studio" component={CoursStudio} />
         <Route exact path="/my-courses" component={MyCourses} />
         <Route exact path="/pricing" component={Pricing} />
-        <Route component={NotFound404} />
+        <Route exact path="/historicCour" component={HistoricCours} />
+        <Route exact path="/historic-subscription" component={SubscriptionHistory} />
+        <Route exact path="/Report" component={Report} />
+        {/* <Route component={NotFound404} />*/}
         <Footer/>
       </div>
     </Router>

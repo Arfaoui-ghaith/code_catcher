@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {setLoginStatus} from './../redux/actions/authAction';
 import './../css/alert.css';
-
+import cogoToast from 'cogo-toast';
 
 export default function Login() {
 
@@ -17,17 +17,32 @@ export default function Login() {
     const dispatchState = (token,user) => dispatch(setLoginStatus(token, user));
     
 
-    const hideAlert = () => {
-        const el = document.querySelector('.alert');
-        if (el) el.parentElement.removeChild(el);
-      };
       
       // type is 'success' or 'error'
       const showAlert = (type, msg) => {
-        hideAlert();
-        const markup = `<div class="alert alert--${type}">${msg}</div>`;
-        document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
-        window.setTimeout(hideAlert, 10000);
+
+        // eslint-disable-next-line default-case
+        switch(type){
+            case "success":
+                cogoToast.loading('Logging...').then(() => {
+                    cogoToast.success(msg);
+                  });
+            break;
+
+            default:
+
+                  const { hide } = cogoToast.error(msg, {
+                    onClick: () => {
+                      hide();
+                    },
+                  });
+
+            break;
+
+
+        }
+        
+
       };
 
       const loginReq = async (data) => {
@@ -45,14 +60,14 @@ export default function Login() {
           if (res.status === 200) {
             
             dispatchState(res.data.token,JSON.stringify(res.data.user));
-            showAlert('success', `Login Successfully !`);
+            showAlert("success", "Login Successfully !");
             window.setTimeout(() => {
               window.location.replace("/");
             }, 1500);
           }
         } catch (err) {
           console.log(err);
-          showAlert('error', err.response.data.message ? err.response.data.message : 'error');
+          showAlert("error", err.response.data.message ? err.response.data.message : 'error');
         }
       };
 
