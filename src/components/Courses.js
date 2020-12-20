@@ -244,17 +244,7 @@ export default function Courses() {
                 </div>
                 
                 
-                <div className="styled-pagination">
-                    <ul className="clearfix">
-                        <li className="prev"><Link to="#"><span className="fa fa-angle-left"></span> </Link></li>
-                        <li><Link to="#">1</Link></li>
-                        <li><Link to="#">2</Link></li>
-                        <li className="active"><Link to="#">3</Link></li>
-                        <li><Link to="#">4</Link></li>
-                        <li><Link to="#">5</Link></li>
-                        <li className="next"><Link to="#"><span className="fa fa-angle-right"></span> </Link></li>
-                    </ul>
-                </div>
+                
                 
             </div>
 	    </div>

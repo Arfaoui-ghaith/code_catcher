@@ -23,7 +23,7 @@ const Report = () => {
         console.log(res);
     
         if (res.status === 200) {
-          showAlert('success', `Your Report has been sended Successfully !`);
+          showAlert('success', `Your Report has been sent Successfully !`);
           
         }
       } catch (err) {
@@ -31,10 +31,6 @@ const Report = () => {
         showAlert('error', err.response.data.message ? err.response.data.message : 'error');
       }
     };
-
-
-
-
 
 
       function sendReport(){
@@ -59,15 +55,6 @@ const Report = () => {
       };
 
 
-
-
-
-
-
-
-
-
-
     const hideAlert = () => {
         const el = document.querySelector('.alert');
         if (el) el.parentElement.removeChild(el);
@@ -82,7 +69,6 @@ const Report = () => {
       };
 
 
-
     const layer1 = {
         backgroundImage: "url(images/icons/icon-1.png)"
     }
@@ -95,7 +81,7 @@ const Report = () => {
         <div>
         <section className="page-title">
             <div className="auto-container">
-                <h1>Contact Us</h1>
+                <h1>Report your Problem here</h1>
                 
                 
                 <div className="search-boxed">

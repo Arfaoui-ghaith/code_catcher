@@ -124,7 +124,7 @@ function HistoricCours() {
                                             <div className="cource-block-two col-lg-12 col-md-12 col-sm-12">
                                                 <div className="inner-box">
                                                     <div className="lower-content">
-                                                        <h5><Link to="/course"  className="text-primary" alt={el._id}  onClick={refreshPage}><i class="fas fa-bookmark"></i> Course: {el.idCours.title}</Link></h5>
+                                                        <h5><Link to="/course"  className="text-primary" alt={el._id} ><i class="fas fa-bookmark"></i> Course: {el.idCours.title}</Link></h5>
                                                         <div className="text" style={styleText} ><i class="fas fa-chalkboard-teacher"></i> <span style={Langer}>Instructor:</span> {el.to.username}</div>
                                                         <div className="clearfix">
                                                             <div className="pull-left">
@@ -280,97 +280,11 @@ function HistoricCours() {
                 </div>
                 
                 
-                <div className="styled-pagination">
-                    <ul className="clearfix">
-                        <li className="prev"><Link to="#"><span className="fa fa-angle-left"></span> </Link></li>
-                        <li><Link to="#">1</Link></li>
-                        <li><Link to="#">2</Link></li>
-                        <li className="active"><Link to="#">3</Link></li>
-                        <li><Link to="#">4</Link></li>
-                        <li><Link to="#">5</Link></li>
-                        <li className="next"><Link to="#"><span className="fa fa-angle-right"></span> </Link></li>
-                    </ul>
-                </div>
+                
                 
             </div>
 	    </div>
-        <section className="popular-courses-section">
-            <div className="auto-container">
-                <div className="sec-title">
-                    <h2>Most Popular Courses</h2>
-                </div>
-                
-                <div className="row clearfix">
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-15.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Color Theory</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-16.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Typography</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-17.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Wireframe & Prototyping</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    
-                </div>
-                
-            </div>
-	    </section>
+       
         </div>
         </React.Fragment>
     )

@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {setLoginStatus} from './../redux/actions/authAction';
 import './../css/alert.css';
-import cogoToast from 'cogo-toast';
+
 
 export default function Login() {
 
@@ -18,32 +18,19 @@ export default function Login() {
     
 
       
+    const hideAlert = () => {
+        const el = document.querySelector('.alert');
+        if (el) el.parentElement.removeChild(el);
+      };
+      
       // type is 'success' or 'error'
       const showAlert = (type, msg) => {
-
-        // eslint-disable-next-line default-case
-        switch(type){
-            case "success":
-                cogoToast.loading('Logging...').then(() => {
-                    cogoToast.success(msg);
-                  });
-            break;
-
-            default:
-
-                  const { hide } = cogoToast.error(msg, {
-                    onClick: () => {
-                      hide();
-                    },
-                  });
-
-            break;
-
-
-        }
-        
-
+        hideAlert();
+        const markup = `<div class="alert alert--${type}" style="font-size:14px">${msg}</div>`;
+        document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
+        window.setTimeout(hideAlert, 10000);
       };
+      
 
       const loginReq = async (data) => {
           console.log(data);
@@ -132,19 +119,7 @@ export default function Login() {
                                 <span className="eye-icon flaticon-eye"></span>
                                 <input className="form-control" type="password" name="password" id="password" placeholder="Password" required="" value={password} onChange={(e) => setPassword(e.target.value)}/>
                             </div>
-                            <div className="form-group">
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="check-box">
-                                            <input type="checkbox" name="remember-password" id="type-1"/> 
-                                            <label htmlFor="type-1">Remember Password</label>
-                                        </div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <Link to="#" className="forgot">Forget Password?</Link> 
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div className="form-group text-center">
                                 <button type="submit" id="btn-login" className="theme-btn btn-style-three" onClick={loginUser}><span className="txt">Login <i className="fa fa-angle-right"></i></span></button>
                             </div>

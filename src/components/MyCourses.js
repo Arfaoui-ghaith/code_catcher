@@ -30,6 +30,10 @@ export default function MyCourses() {
          
     },[]);
 
+    const refreshPage = (e) => {
+        window.location.replace('/course-lessons');
+      }
+
     const style1 = {
         backgroundImage: "url(images/icons/icon-1.png)"
     }
@@ -117,10 +121,10 @@ export default function MyCourses() {
                                                                 return (<div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
                                                                 <div className="inner-box">
                                                                     <div className="image">
-                                                                        <Link to="#"><img src="images/course.png" alt=""/></Link>
+                                                                        <Link to="/course-lessons" onClick={refreshPage}><img src="images/course.png" alt=""/></Link>
                                                                     </div>
                                                                     <div className="lower-content">
-                                                                        <h5><Link to="#">{el.title}</Link></h5>
+                                                                        <h5><Link to="/course-lessons" onClick={refreshPage}>{el.title}</Link></h5>
                                                                         <div className="text">{el.description}</div>
                                                                         <div className="clearfix">
                                                                             <div className="pull-left">

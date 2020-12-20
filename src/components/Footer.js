@@ -24,8 +24,8 @@ export default function Footer() {
                     <h2>Ready to get started?</h2>
                     <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two <br/> waters own morning gathered greater shall had behold had seed.</div>
                     <div className="buttons-box">
-                        <Link to="course.html" className="theme-btn btn-style-one"><span className="txt">Get Stared <i className="fa fa-angle-right"></i></span></Link>
-                        <Link to="course.html" className="theme-btn btn-style-two"><span className="txt">All Courses <i className="fa fa-angle-right"></i></span></Link>
+                        <Link to="/pricing" className="theme-btn btn-style-one"><span className="txt">Get Stared <i className="fa fa-angle-right"></i></span></Link>
+                        <Link to="/all-courses" className="theme-btn btn-style-two"><span className="txt">All Courses <i className="fa fa-angle-right"></i></span></Link>
                     </div>
                 </div>
             </div>

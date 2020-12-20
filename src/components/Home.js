@@ -14,7 +14,6 @@ export default function Home() {
     }
 
   
-
     return (
         <React.Fragment>
         <div>
@@ -81,7 +80,7 @@ export default function Home() {
 					<div className="inner-column">
 						<h2>Our education system <br/> works for you</h2>
 						<div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters own morning gathered greater shall had behold had seed.</div>
-						<Link to="/courses" className="theme-btn btn-style-two"><span className="txt">Learn More <i className="fa fa-angle-right"></i></span></Link>
+						<Link to="/all-courses" className="theme-btn btn-style-two"><span className="txt">Learn More <i className="fa fa-angle-right"></i></span></Link>
 					</div>
 				</div>
 				

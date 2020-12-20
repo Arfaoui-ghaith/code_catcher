@@ -23,6 +23,8 @@ export default function Header() {
       }
 
     useEffect(() => {
+        
+        
         (function($) {
             
             
@@ -608,7 +610,7 @@ export default function Header() {
                                 {
                                     token === undefined ?
                                 <ul className="login-nav"><React.Fragment><li><Link to="/login">Log In</Link></li><li><Link to="/register">Register</Link></li></React.Fragment></ul> :
-                                <ul className="info-list"><React.Fragment><li><span>Hi! </span>{JSON.parse(user).email}</li><li><Link to="#" onClick={deconnexion}><strong>Disconnexion</strong></Link></li></React.Fragment></ul>
+                                <ul className="info-list"><React.Fragment><li><span>Hi! </span>{JSON.parse(user).email}</li><li><Link to="#" onClick={deconnexion}><strong>Log out</strong></Link></li></React.Fragment></ul>
                                 }
                             </div>
                         </div>
@@ -654,7 +656,7 @@ export default function Header() {
                                             <ul>
                                                 <li><Link to="/all-courses" onClick={refreshPage}>All Courses</Link></li>
                                                 <li><Link to="/my-courses" onClick={refreshPage}>My Courses</Link></li>
-                                                <li><Link to="/course-studio" onClick={refreshPage}>Course Studio</Link></li>
+                                                { localStorage.getItem("token") === undefined || localStorage.getItem("token") === null ? '' : (JSON.parse(user).abonner === true ? <li><Link to="/course-studio" onClick={refreshPage}>Course Studio</Link></li> : '')}
                                             </ul>
                                             </li>
                                             <li className="dropdown"><Link to="#">Profile</Link>
@@ -668,7 +670,8 @@ export default function Header() {
 
                                             <li className="dropdown"><Link to="#">Payment</Link>
                                             <ul>
-                                                <li><Link to="/pricing" onClick={refreshPage}>Subscription</Link></li>
+                    
+                                                { localStorage.getItem("token") === undefined || localStorage.getItem("token") === null ? '' : (JSON.parse(user).abonner !== true ? <li><Link to="/pricing" onClick={refreshPage}>Subscription</Link></li> : '')}
                                                 <li><Link to="/historicCour" onClick={refreshPage}>Courses Unlock History</Link></li>
                                                 <li><Link to="/historic-subscription" onClick={refreshPage}>Subscription History</Link></li>
                                             </ul>
