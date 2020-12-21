@@ -27,7 +27,7 @@ export default function CoursStudio() {
       // type is 'success' or 'error'
       const showAlert = (type, msg) => {
         hideAlert();
-        const markup = `<div class="alert alert--${type}">${msg}</div>`;
+        const markup = `<div class="alert alert--${type}" style="font-size:14px">${msg}</div>`;
         document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
         window.setTimeout(hideAlert, 10000);
       };
@@ -47,19 +47,19 @@ export default function CoursStudio() {
           if (res.data.status === 'success') {
             showAlert('success', `Course Created Successfully !`);
             window.setTimeout(() => {
-              //location.assign('/Me');
+                window.location.replace("/all-courses");
             }, 1500);
           }
         } catch (err) {
           console.log(err);
           showAlert('error', err.response.data ? err.response.data : 'error');
         }
+        return;
       };
 
-      function createCourse(){
-        const courseDataForm = document.getElementById('create-course');
-        if(courseDataForm){
-            courseDataForm.addEventListener('submit', async (e) => {
+      const createCourse = async (e) => {
+          e.disabled = true;
+          e.target.innerHTML = "PROCESSING ...";
                 e.preventDefault();
             
                 //document.querySelector('.btn--save-settings').text = 'Updating...';
@@ -80,9 +80,10 @@ export default function CoursStudio() {
                 console.log(form);
                 
                 await updateData(form);
+                e.disabled = false;
                 //document.querySelector('.btn--save-settings').text = 'SAVE SETTINGS';
-              });
-            }
+              
+            
       };
 
    
@@ -163,7 +164,7 @@ export default function CoursStudio() {
                                                                 <div className="col-lg-12 col-md-12 col-sm-12 form-group text-right" id="messagePlace">
                                                                     
                                                                     <button className="theme-btn btn-style-two" name="submit-form"><span className="txt">Cancel</span></button>
-                                                                    <button className="theme-btn btn-style-three" type="submit" name="submit-form" onClick={createCourse}><span className="txt">Save Course <i className="fa fa-angle-right"></i></span></button>
+                                                                    <button className="theme-btn btn-style-three" name="submit-form" onClick={createCourse}><span className="txt">Save Course <i className="fa fa-angle-right"></i></span></button>
                                                                 </div>
                                                                 
                                                             </div>

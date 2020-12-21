@@ -49,8 +49,8 @@ export default function Courses() {
     }
 
     const refreshPage = (e) => {
-        localStorage.setItem('coursId',e.target.alt);
-        window.location.replace(e.target.href ? e.target.href : e.target.name );
+        e.target.attributes.length === 1 ? localStorage.setItem('coursId',e.target.attributes[0].value) : localStorage.setItem('coursId',e.target.alt);
+        window.location.replace('/course');
       }
 
     return (
@@ -117,7 +117,7 @@ export default function Courses() {
                                                         <Link to="/course" onClick={refreshPage}><img src="images/resource/course-6.jpg" alt={el._id} name="/course"/></Link>
                                                     </div>
                                                     <div className="lower-content">
-                                                        <h5><Link to="/course" alt={el._id}  onClick={refreshPage}>{el.title}</Link></h5>
+                                                        <h5><Link to="/course" onClick={refreshPage}><p name={el._id}>{el.title}</p></Link></h5>
                                                         <div className="text" style={styleText} >{el.description}</div>
                                                         <div className="clearfix">
                                                             <div className="pull-left">
@@ -248,81 +248,7 @@ export default function Courses() {
                 
             </div>
 	    </div>
-        <section className="popular-courses-section">
-            <div className="auto-container">
-                <div className="sec-title">
-                    <h2>Most Popular Courses</h2>
-                </div>
-                
-                <div className="row clearfix">
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-15.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Color Theory</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-16.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Typography</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div className="cource-block-two col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div className="image">
-                                <Link to="/course-detail"><img src="images/resource/course-17.jpg" alt=""/></Link>
-                            </div>
-                            <div className="lower-content">
-                                <h5><Link to="/course-detail">Wireframe & Prototyping</Link></h5>
-                                <div className="text">Replenish him third creature and meat blessed void a fruit gathered you’re, they’re two waters.</div>
-                                <div className="clearfix">
-                                    <div className="pull-left">
-                                        <div className="students">12 Lecturer</div>
-                                    </div>
-                                    <div className="pull-right">
-                                        <div className="hours">54 Hours</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-	    </section>
+       
         </div>
         </React.Fragment>
     )

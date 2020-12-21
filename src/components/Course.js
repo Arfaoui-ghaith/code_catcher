@@ -35,6 +35,7 @@ export default function Course() {
     }
 
     useEffect(() =>{
+        
         if(localStorage.getItem('payment_intent_id') !== null && localStorage.getItem('payment_intent') !== undefined){
             res_payment();
         }
