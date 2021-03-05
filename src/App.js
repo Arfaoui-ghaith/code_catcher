@@ -11,6 +11,7 @@ import CoursStudio from './components/CoursStudio';
 import MyCourses from './components/MyCourses';
 import Pricing from './components/Pricing';
 import NotFound404 from './components/NotFound404';
+import EditProfile from './components/EditProfile';
 import Lessons from './components/Lessons';
 import {
   BrowserRouter as Router,
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/Login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/contact" component={ContactUs} />
+        <Route exact path="/editProfile" component={EditProfile} />
         <Route exact path="/all-courses" component={Courses} />
         <Route exact path="/course" component={Course} />
         <Route exact path="/course-studio" component={CoursStudio} />
@@ -37,7 +39,7 @@ function App() {
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/historicCour" component={HistoricCours} />
         <Route exact path="/historic-subscription" component={SubscriptionHistory} />
-        <Route exact path="/Report" component={Report} />
+        <Route exact path="/report" component={Report} />
         {/* <Route component={NotFound404} />*/}
         <Footer/>
       </div>

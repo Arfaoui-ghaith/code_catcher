@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import moment from 'moment';
 
 function SubscriptionHistory() {
@@ -40,7 +39,8 @@ function SubscriptionHistory() {
         "overflow": "hidden",
         "display": "-webkit-box",
         WebkitLineClamp: "3",
-        WebkitBoxOrient: "vertical"
+        WebkitBoxOrient: "vertical",
+        fontFamily: "Langar, cursive"
     }
 
     
@@ -54,10 +54,10 @@ function SubscriptionHistory() {
     fontFamily: "Langar, cursive"
     }
 
-    const refreshPage = (e) => {
+    /*const refreshPage = (e) => {
         localStorage.setItem('coursId',e.target.alt);
         window.location.replace(e.target.href ? e.target.href : e.target.name );
-      }
+      }*/
 
     return (
         <React.Fragment>
@@ -121,8 +121,8 @@ function SubscriptionHistory() {
                                                 <div className="inner-box">
                                                     <div className="lower-content">
                                                         <h5><i className="far fa-clock"></i> Duration: <span style={Langer}>{el.nbMonths} Months</span></h5>
-                                                        <div className="text" style={styleText,Langer} ><span className="text-info"><i className="far fa-calendar-check" ></i> Start: </span>{moment(el.createdAt).format("MMM Do YYYY")}</div>
-                                                        <div className="text" style={styleText,Langer} ><span className="text-danger"><i className="far fa-calendar-times"></i> End: </span>{moment(el.createdAt).add(el.nbMonths, 'months').format("MMM Do YYYY")}</div>
+                                                        <div className="text" style={styleText} ><span className="text-info"><i className="far fa-calendar-check" ></i> Start: </span>{moment(el.createdAt).format("MMM Do YYYY")}</div>
+                                                        <div className="text" style={styleText} ><span className="text-danger"><i className="far fa-calendar-times"></i> End: </span>{moment(el.createdAt).add(el.nbMonths, 'months').format("MMM Do YYYY")}</div>
                                                         <div className="clearfix">
                                                             <div className="pull-right">
                                                                 <div className="hours font-italic">${el.nbMonths * 10}</div>

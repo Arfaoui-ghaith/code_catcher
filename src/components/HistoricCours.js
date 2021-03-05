@@ -58,10 +58,10 @@ function HistoricCours() {
         }
 
 
-    const refreshPage = (e) => {
+    /*const refreshPage = (e) => {
         localStorage.setItem('coursId',e.target.alt);
         window.location.replace(e.target.href ? e.target.href : e.target.name );
-      }
+      }*/
 
     return (
         <React.Fragment>

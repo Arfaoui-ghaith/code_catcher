@@ -17,6 +17,8 @@ export default function Login() {
     const dispatchState = (token,user) => dispatch(setLoginStatus(token, user));
     
 
+    
+
       
     const hideAlert = () => {
         const el = document.querySelector('.alert');
@@ -124,7 +126,7 @@ export default function Login() {
                                 <button type="submit" id="btn-login" className="theme-btn btn-style-three" onClick={loginUser}><span className="txt">Login <i className="fa fa-angle-right"></i></span></button>
                             </div>
                             <div className="form-group">
-                                <div className="users">New User? <Link to="/register">Sign Up</Link></div>
+                                <div className="users">New User? <Link to="/register" onClick={(e)=> window.location.replace('/register')}>Sign Up</Link></div>
                             </div>
                         </form>
                     </div>

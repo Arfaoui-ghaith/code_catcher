@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect} from 'react';
 
 import { WOW }  from 'wowjs';
 import {Link} from 'react-router-dom';
@@ -663,7 +663,7 @@ export default function Header() {
                                             <ul>
                                                 <li><Link to="/profile" onClick={refreshPage}>Instructor Profile</Link></li>
                                                 <li><Link to="/profile" onClick={refreshPage}>Student Profile</Link></li>
-                                                <li><Link to="/profile" onClick={refreshPage}>Edit Profile</Link></li>
+                                                <li><Link to="/editProfile" onClick={refreshPage}>Edit Profile</Link></li>
                                             </ul>
                                             </li>
 

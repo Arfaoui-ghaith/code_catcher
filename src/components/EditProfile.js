@@ -1,11 +1,9 @@
 import React from 'react'
 import axios from 'axios';
 import './../css/alert.css';
-import { useSelector } from 'react-redux';
-export default function CoursStudio() {
+export default function EditProfile() {
 
-    const token = useSelector(state=>state.token);
-
+    
     const style1 = {
         backgroundImage: "url(images/icons/icon-1.png)"
     }
@@ -17,6 +15,7 @@ export default function CoursStudio() {
     function uploadImage() {
         document.getElementById('caption').click();
     }
+
     function uploadVids() {
         document.getElementById('videos').click();
     }
@@ -38,7 +37,7 @@ export default function CoursStudio() {
         try {
           const url ='/cours/add';
           const res = await axios({
-            headers: {'Authorization': `Bearer ${token}`},
+            headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`},
             method: 'post',
             url,
             data,
@@ -88,13 +87,12 @@ export default function CoursStudio() {
             
       };
 
-   
     return (
         <React.Fragment>
         <div>
             <section className="page-title style-two" >
                 <div className="auto-container">
-                    <h1>Course Studio</h1>
+                    <h1>Edit Profile</h1>
                 </div>
             </section>
             <section className="edit-profile-section" >
@@ -132,7 +130,7 @@ export default function CoursStudio() {
                                                 <div className="content">
                                                    
                                                     <div className="title-box">
-                                                        <h5>Create Your Course</h5>
+                                                        <h5>Update Your Personal Infos</h5>
                                                     </div>
                                                     
                                                    
@@ -140,33 +138,47 @@ export default function CoursStudio() {
                                                     
                                                        
                                                         <form id="create-course">
-                                                            <div className="row clearfix">
+                                                            <div class="row clearfix">
                                                                 
-                                                                <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                                                                    <input type="text" id="course-title" name="title" placeholder="Course Title" required=""/>
-                                                                    <span className="icon flaticon-edit-1"></span>
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="text" name="username" placeholder="First Name" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
                                                                 </div>
                                                                 
-                                                                <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                                                                    <input type="text" id="course-price" name="title" placeholder="Course Price" required=""/>
-                                                                    <span className="icon flaticon-edit-1"></span>
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="text" name="username" placeholder="Last Name" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
+                                                                </div>
+                                                                
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="email" name="email" placeholder="Email" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
+                                                                </div>
+                                                                
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="text" name="phone" placeholder="Phone" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
+                                                                </div>
+
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="password" name="password" placeholder="Password" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
+                                                                </div>
+                                                                
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                                                    <input type="password" name="passwordConfirm" placeholder="Confirm Password" required=""/>
+                                                                    <span class="icon flaticon-edit-1"></span>
                                                                 </div>
                                                                 
                                                                 
                                                                 
-                                                                <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                                    <span className="theme-btn btn-style-three" style={{cursor: "pointer"}} onClick={uploadVids}><span className="txt">Upload Course Videos<i className="fa fa-angle-right"></i></span></span>
-                                                                    <input type="file" id="videos" multiple  name="videos"  hidden/>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                                    <textarea class="" name="message" placeholder="Your Description"></textarea>
                                                                 </div>
                                                                 
-                                                                <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                                                                    <textarea className="" id="course-description" name="description" placeholder="Course Description"></textarea>
-                                                                </div>
-                                                                
-                                                                <div className="col-lg-12 col-md-12 col-sm-12 form-group text-right" id="messagePlace">
-                                                                    
-                                                                    <button className="theme-btn btn-style-two" name="submit-form"><span className="txt">Cancel</span></button>
-                                                                    <button className="theme-btn btn-style-three" name="submit-form" onClick={createCourse}><span className="txt">Save Course <i className="fa fa-angle-right"></i></span></button>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group text-right">
+                                                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form"><span class="txt">Cancel <i class="fa fa-angle-right"></i></span></button>
+                                                                    <button class="theme-btn btn-style-three" type="submit" name="submit-form"><span class="txt">Save Change <i class="fa fa-angle-right"></i></span></button>
                                                                 </div>
                                                                 
                                                             </div>

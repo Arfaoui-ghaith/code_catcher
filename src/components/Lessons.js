@@ -226,12 +226,12 @@ export default function Lessons() {
 
                                         
                                         <li className="accordion block">
-                                            <div className="acc-btn active"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> UI/ UX Introduction</div>
+                                            <div className="acc-btn active"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Docker Beginner Tutorial</div>
                                             <div className="acc-content current">
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/wi-MGFhrad0" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 1</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
@@ -241,7 +241,7 @@ export default function Lessons() {
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/0e-KiGJIiDc" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 2</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
@@ -251,7 +251,7 @@ export default function Lessons() {
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/YCrRy7pBzdc" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 3</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
@@ -263,12 +263,12 @@ export default function Lessons() {
 
                                         
                                         <li className="accordion block">
-                                            <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Color Theory</div>
+                                            <div className="acc-btn"><div className="icon-outer"><span className="icon icon-plus flaticon-angle-arrow-down"></span></div> Docker Lessons</div>
                                             <div className="acc-content">
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/zW9Nt27NrWc" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 4</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
@@ -278,7 +278,7 @@ export default function Lessons() {
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/KCckWweNSrM" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 5</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
@@ -288,7 +288,7 @@ export default function Lessons() {
                                                 <div className="content">
                                                     <div className="clearfix">
                                                         <div className="pull-left">
-                                                            <Link to="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image play-icon"><span className="fa fa-play"></span>What is UI/ UX Design?</Link>
+                                                            <Link to="https://youtu.be/ymlWt1MqURY" className="lightbox-image play-icon"><span className="fa fa-play"></span>Docker Beginner Tutorial 7</Link>
                                                         </div>
                                                         <div className="pull-right">
                                                             <div className="minutes">2 Min 45 Sec</div>
